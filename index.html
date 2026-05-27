@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ecfeff">
+  <title>Kế hoạch 30 ngày xây kênh TikTok phim ngắn</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ecfeff;
+      --paper: #ffffff;
+      --paper-soft: #f8fafc;
+      --ink: #12313d;
+      --muted: #506775;
+      --line: #d8edf2;
+      --cyan: #0891b2;
+      --cyan-soft: #cffafe;
+      --mint: #22c55e;
+      --mint-soft: #dcfce7;
+      --peach: #fb7185;
+      --peach-soft: #ffe4e6;
+      --sun: #f59e0b;
+      --sun-soft: #fef3c7;
+      --violet: #8b5cf6;
+      --violet-soft: #ede9fe;
+      --shadow: 0 18px 50px rgba(8, 145, 178, 0.12);
+      --radius: 8px;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(207, 250, 254, 0.72), rgba(236, 254, 255, 0) 360px),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .page {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: calc(18px + var(--safe-top)) 16px calc(88px + var(--safe-bottom));
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: -18px -16px 16px;
+      padding: calc(12px + var(--safe-top)) 16px 12px;
+      background: rgba(236, 254, 255, 0.9);
+      border-bottom: 1px solid rgba(216, 237, 242, 0.86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .logo {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--cyan);
+      box-shadow: 0 8px 24px rgba(8, 145, 178, 0.24);
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav a,
+    .chip {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .nav a:hover,
+    .chip:hover {
+      background: #ffffff;
+      border-color: #9bddea;
+      color: var(--cyan);
+    }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      padding: 18px 0 8px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      min-height: 32px;
+      margin-bottom: 12px;
+      padding: 0 10px;
+      border-radius: var(--radius);
+      background: var(--peach-soft);
+      color: #9f1239;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: 0;
+      line-height: 1.14;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: 34px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-top: 12px;
+      font-size: 17px;
+      color: #365464;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 15px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: var(--cyan);
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .btn:hover {
+      background: #0e7490;
+    }
+
+    .btn.secondary {
+      color: var(--ink);
+      background: #ffffff;
+      border-color: var(--line);
+    }
+
+    .btn.secondary:hover {
+      color: var(--cyan);
+      border-color: #9bddea;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 0 22px 22px;
+    }
+
+    .metric {
+      min-height: 104px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: var(--paper-soft);
+      border: 1px solid var(--line);
+    }
+
+    .metric b {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .notice {
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid #fecdd3;
+      background: var(--peach-soft);
+      color: #881337;
+      font-weight: 700;
+    }
+
+    .notice p {
+      color: #881337;
+      font-weight: 650;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 10px 32px rgba(8, 145, 178, 0.08);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      margin-top: 6px;
+      max-width: 760px;
+    }
+
+    .tag {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: var(--radius);
+      background: var(--cyan-soft);
+      color: #155e75;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid.two,
+    .grid.three,
+    .grid.four {
+      grid-template-columns: 1fr;
+    }
+
+    .mini-card {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .mini-card.accent-cyan {
+      background: var(--cyan-soft);
+      border-color: #a5f3fc;
+    }
+
+    .mini-card.accent-mint {
+      background: var(--mint-soft);
+      border-color: #bbf7d0;
+    }
+
+    .mini-card.accent-peach {
+      background: var(--peach-soft);
+      border-color: #fecdd3;
+    }
+
+    .mini-card.accent-sun {
+      background: var(--sun-soft);
+      border-color: #fde68a;
+    }
+
+    .mini-card.accent-violet {
+      background: var(--violet-soft);
+      border-color: #ddd6fe;
+    }
+
+    .mini-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f0fdff;
+      color: #155e75;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .day {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 38px;
+      min-height: 32px;
+      border-radius: var(--radius);
+      background: var(--cyan-soft);
+      color: #155e75;
+      font-weight: 900;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 9px;
+      border-radius: var(--radius);
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pill.cyan {
+      background: var(--cyan-soft);
+      color: #155e75;
+    }
+
+    .pill.mint {
+      background: var(--mint-soft);
+      color: #166534;
+    }
+
+    .pill.peach {
+      background: var(--peach-soft);
+      color: #9f1239;
+    }
+
+    .pill.sun {
+      background: var(--sun-soft);
+      color: #92400e;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .step::before {
+      content: counter(step);
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: var(--cyan);
+      font-weight: 900;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+    }
+
+    .check {
+      min-height: 48px;
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      align-items: start;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .check input {
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0;
+      accent-color: var(--cyan);
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: calc(10px + var(--safe-bottom));
+      z-index: 30;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 8px;
+      border: 1px solid rgba(216, 237, 242, 0.9);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 16px 42px rgba(8, 145, 178, 0.16);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .bottom-nav a {
+      min-height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .bottom-nav a:hover {
+      color: var(--cyan);
+      background: var(--cyan-soft);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      display: inline-block;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    @media (min-width: 700px) {
+      .page {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .topbar {
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .nav {
+        display: flex;
+      }
+
+      .hero-main {
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 30px 30px;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid.three {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .bottom-nav {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Về đầu trang">
+        <span class="logo" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        </span>
+        <span>
+          <strong>TikTok Film Plan</strong>
+          <span>30 ngày build kênh</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Điều hướng trang">
+        <a href="#strategy">Chiến lược</a>
+        <a href="#calendar">Lịch 30 ngày</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#kpi">KPI</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="page">
+    <section class="hero hero-card" aria-labelledby="page-title">
+      <div class="hero-main">
+        <span class="eyebrow">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l2.2 4.4 4.8.7-3.5 3.4.8 4.8L12 14l-4.3 2.3.8-4.8L5 8.1l4.8-.7L12 3z"></path></svg>
+          Cute, sáng, dễ đọc trên iOS
+        </span>
+        <h1 id="page-title">Kế hoạch 30 ngày xây kênh TikTok phim ngắn vài phút</h1>
+        <p class="lead">Tập trung đăng các clip phim ngắn 60-180 giây từ nguồn bạn có quyền xử lý, đóng gói lại theo series, hook rõ, caption dễ hiểu, lịch up đều và tối ưu retention sau mỗi ngày.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#calendar">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path></svg>
+            Xem lịch đăng
+          </a>
+          <a class="btn secondary" href="#workflow">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg>
+            Xem workflow
+          </a>
+        </div>
+      </div>
+      <div class="quick-grid" aria-label="Tóm tắt mục tiêu">
+        <div class="metric"><b>92</b><span>clip trong 30 ngày</span></div>
+        <div class="metric"><b>2-4</b><span>clip mỗi ngày</span></div>
+        <div class="metric"><b>60-180s</b><span>độ dài ưu tiên</span></div>
+        <div class="metric"><b>4</b><span>trụ cột nội dung</span></div>
+      </div>
+    </section>
+
+    <section class="notice" aria-label="Lưu ý bản quyền">
+      <p><strong>Ranh giới an toàn:</strong> Kế hoạch này giả định bạn có quyền sử dụng hoặc quyền phân phối các đoạn phim từ iQiyi/nguồn khác. File không hướng dẫn né quét bản quyền; phần tối ưu chỉ tập trung vào đóng gói nội dung, lịch đăng, chất lượng hiển thị, retention và vận hành kênh.</p>
+    </section>
+
+    <section id="strategy" class="section" aria-labelledby="strategy-title">
+      <div class="section-head">
+        <div>
+          <h2 id="strategy-title">Chiến lược kênh</h2>
+          <p>Định vị kênh là kho phim ngắn dễ xem trên điện thoại: mỗi clip vài phút, có tiêu đề rõ, chia phần mạch lạc, thumbnail sạch và lịch đăng đều.</p>
+        </div>
+        <span class="tag">Nền móng</span>
+      </div>
+
+      <div class="grid four">
+        <article class="mini-card accent-cyan">
+          <h3>Clip chính tuyến</h3>
+          <p>Cắt theo mạch truyện có mở đầu, cao trào và điểm dừng rõ. Mỗi phần tự hiểu được nhưng vẫn khiến người xem muốn xem tiếp.</p>
+        </article>
+        <article class="mini-card accent-mint">
+          <h3>Series nhiều phần</h3>
+          <p>Gom clip thành playlist P1, P2, P3. Tên series thống nhất để người mới dễ xem liền mạch.</p>
+        </article>
+        <article class="mini-card accent-peach">
+          <h3>Cảnh cao trào</h3>
+          <p>Ưu tiên đoạn có drama, twist, hành động hoặc cảm xúc mạnh. Caption đặt vấn đề ngay từ dòng đầu.</p>
+        </article>
+        <article class="mini-card accent-sun">
+          <h3>Clip giữ chân</h3>
+          <p>Đo completion từng đoạn, chọn các phần có nhịp nhanh, ít thoại thừa và điểm dừng khiến người xem chờ phần sau.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="posting-title">
+      <div class="section-head">
+        <div>
+          <h2 id="posting-title">Tần suất và khung giờ đăng</h2>
+          <p>Dùng múi giờ Việt Nam GMT+7. Nếu bắt đầu từ 27/05/2026, chạy đủ 30 ngày đến 25/06/2026.</p>
+        </div>
+        <span class="tag">Lịch up</span>
+      </div>
+
+      <div class="grid three">
+        <article class="mini-card">
+          <h3>Ngày 1-7: test nền</h3>
+          <p>2 clip/ngày vào 11:30 và 20:30. Mục tiêu là test độ dài, tiêu đề, thumbnail và series có retention tốt.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Ngày 8-21: tăng nhịp</h3>
+          <p>3 clip/ngày vào 11:30, 19:30, 22:30. Nhân đôi series thắng, bỏ nguồn/format dưới chuẩn.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Ngày 22-30: scale có chọn lọc</h3>
+          <p>4 clip/ngày nếu backlog đủ: thêm slot 00:15 cho clip drama/twist. Nếu chất lượng giảm, giữ 3 clip/ngày.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="formula-title">
+      <div class="section-head">
+        <div>
+          <h2 id="formula-title">Công thức video</h2>
+          <p>Mỗi clip cần có điểm vào nhanh, đoạn giữa ít rơi nhịp và kết thúc đúng lúc để kéo xem phần tiếp theo.</p>
+        </div>
+        <span class="tag">Content</span>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div>
+            <h3>Hook 0-3 giây</h3>
+            <p>Mở bằng cảnh có xung đột hoặc câu caption mạnh: “Cô ấy vừa bước vào cái bẫy lớn nhất đời mình.”</p>
+          </div>
+        </article>
+        <article class="step">
+          <div>
+            <h3>Ngữ cảnh 3-8 giây</h3>
+            <p>Đặt text ngắn để người xem hiểu ai, đang ở đâu, chuyện gì sắp xảy ra. Không để đoạn đầu quá chậm.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div>
+            <h3>Diễn biến 8-35 giây</h3>
+            <p>Giữ đoạn có hành động, hội thoại then chốt hoặc cảm xúc tăng dần. Cắt bỏ khoảng lặng không phục vụ câu chuyện.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div>
+            <h3>CTA 35-45 giây</h3>
+            <p>Kết ở điểm vừa đủ tò mò, thêm caption “Phần tiếp theo lúc 20:30” hoặc “Xem P2 trong playlist”.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="calendar" class="section" aria-labelledby="calendar-title">
+      <div class="section-head">
+        <div>
+          <h2 id="calendar-title">Lịch triển khai 30 ngày</h2>
+          <p>Ưu tiên làm theo batch: mỗi sáng đăng video đã dựng từ hôm trước, mỗi tối đọc số liệu và chọn format cho ngày sau.</p>
+        </div>
+        <span class="tag">30 ngày</span>
+      </div>
+
+      <div class="table-wrap" role="region" aria-label="Bảng lịch 30 ngày" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th>Số video</th>
+              <th>Chủ đề chính</th>
+              <th>Format cần làm</th>
+              <th>Việc vận hành</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="day">1</span></td><td>2</td><td>Setup nhận diện kênh</td><td><span class="pill-row"><span class="pill cyan">Trailer kênh</span><span class="pill mint">P1 series A</span></span></td><td>Chốt tên kênh, bio, avatar, 4 mẫu cover, quy tắc đặt tên phần.</td></tr>
+            <tr><td><span class="day">2</span></td><td>2</td><td>Test độ dài clip</td><td><span class="pill-row"><span class="pill cyan">60-90s</span><span class="pill sun">120-180s</span></span></td><td>So completion rate giữa clip ngắn và clip dài, ghi vào tracker.</td></tr>
+            <tr><td><span class="day">3</span></td><td>2</td><td>Test thumbnail</td><td><span class="pill-row"><span class="pill mint">Mặt nhân vật</span><span class="pill peach">Cảnh cao trào</span></span></td><td>Tạo 6 mẫu cover chữ lớn, đo CTR qua view 2h đầu.</td></tr>
+            <tr><td><span class="day">4</span></td><td>2</td><td>Test tiêu đề</td><td><span class="pill-row"><span class="pill sun">Tò mò</span><span class="pill cyan">Drama rõ</span></span></td><td>Viết 20 mẫu tiêu đề dưới 48 ký tự, dùng 2 phong cách đối chứng.</td></tr>
+            <tr><td><span class="day">5</span></td><td>2</td><td>Mở series A</td><td><span class="pill-row"><span class="pill peach">P1</span><span class="pill mint">P2</span></span></td><td>Đăng liền 2 phần cùng ngày để test khả năng kéo người xem qua playlist.</td></tr>
+            <tr><td><span class="day">6</span></td><td>2</td><td>Mở series B</td><td><span class="pill-row"><span class="pill cyan">P1</span><span class="pill sun">P2</span></span></td><td>So series A/B theo view 24h, completion, follow gained.</td></tr>
+            <tr><td><span class="day">7</span></td><td>2</td><td>Tổng kết tuần 1</td><td><span class="pill-row"><span class="pill mint">Best clip</span><span class="pill peach">Best cover</span></span></td><td>Giữ 2 series thắng, bỏ template tiêu đề yếu, chuẩn bị backlog 21 clip.</td></tr>
+            <tr><td><span class="day">8</span></td><td>3</td><td>Tăng nhịp series thắng</td><td><span class="pill-row"><span class="pill cyan">P3</span><span class="pill mint">P4</span><span class="pill sun">Highlight</span></span></td><td>Thêm slot 22:30, đăng phần tiếp theo của series có completion tốt nhất.</td></tr>
+            <tr><td><span class="day">9</span></td><td>3</td><td>Test giờ đăng</td><td><span class="pill-row"><span class="pill sun">11:30</span><span class="pill cyan">19:30</span><span class="pill peach">22:30</span></span></td><td>Giữ format giống nhau, chỉ đổi khung giờ để đo slot mạnh.</td></tr>
+            <tr><td><span class="day">10</span></td><td>3</td><td>Cảnh cao trào</td><td><span class="pill-row"><span class="pill peach">Twist</span><span class="pill mint">Đối đầu</span></span></td><td>Ưu tiên clip có xung đột ngay 5 giây đầu.</td></tr>
+            <tr><td><span class="day">11</span></td><td>3</td><td>Cặp đôi/tuyến tình cảm</td><td><span class="pill-row"><span class="pill cyan">P1</span><span class="pill peach">P2</span></span></td><td>Tạo playlist riêng cho tuyến tình cảm nếu comment tốt.</td></tr>
+            <tr><td><span class="day">12</span></td><td>3</td><td>Clip hành động nhanh</td><td><span class="pill-row"><span class="pill sun">Rượt đuổi</span><span class="pill mint">Cứu nguy</span></span></td><td>Đo retention giữa clip hành động và clip thoại.</td></tr>
+            <tr><td><span class="day">13</span></td><td>3</td><td>Clip thoại then chốt</td><td><span class="pill-row"><span class="pill cyan">Bí mật</span><span class="pill mint">Lật mặt</span></span></td><td>Caption hỗ trợ người xem tắt âm thanh nhưng không che mặt nhân vật.</td></tr>
+            <tr><td><span class="day">14</span></td><td>3</td><td>Tổng kết tuần 2</td><td><span class="pill-row"><span class="pill sun">Top 5 clip</span><span class="pill peach">Format yếu</span></span></td><td>Chốt 3 series chủ lực, backlog tối thiểu 30 clip.</td></tr>
+            <tr><td><span class="day">15</span></td><td>3</td><td>Series hóa mạnh</td><td><span class="pill-row"><span class="pill cyan">P5/P6</span><span class="pill mint">Playlist</span></span></td><td>Đặt tên phần nhất quán: “Tên series - P05”.</td></tr>
+            <tr><td><span class="day">16</span></td><td>3</td><td>Clip theo comment</td><td><span class="pill-row"><span class="pill peach">Người xem chọn</span><span class="pill cyan">Phần tiếp</span></span></td><td>Ghim comment hỏi người xem muốn xem tuyến nào tiếp.</td></tr>
+            <tr><td><span class="day">17</span></td><td>3</td><td>Test nhạc nền hợp lệ</td><td><span class="pill-row"><span class="pill mint">Nhẹ</span><span class="pill sun">Căng thẳng</span></span></td><td>Dùng âm thanh được TikTok cho phép hoặc audio bạn có quyền sử dụng.</td></tr>
+            <tr><td><span class="day">18</span></td><td>3</td><td>Clip kết mở</td><td><span class="pill-row"><span class="pill peach">Cliffhanger</span><span class="pill cyan">P tiếp</span></span></td><td>Kết thúc đúng điểm tò mò, điều hướng sang phần kế tiếp.</td></tr>
+            <tr><td><span class="day">19</span></td><td>3</td><td>Gói lại series cũ</td><td><span class="pill-row"><span class="pill sun">Best scene</span><span class="pill mint">P tổng hợp</span></span></td><td>Dùng lại phần thắng dưới dạng compilation nếu có quyền khai thác.</td></tr>
+            <tr><td><span class="day">20</span></td><td>3</td><td>Livestream nhẹ nếu đủ follow</td><td><span class="pill-row"><span class="pill cyan">Vote series</span><span class="pill peach">Q&A</span></span></td><td>Nếu chưa live được, đăng 1 video poll chọn series tuần sau.</td></tr>
+            <tr><td><span class="day">21</span></td><td>3</td><td>Tổng kết tuần 3</td><td><span class="pill-row"><span class="pill mint">KPI clip</span><span class="pill sun">Plan scale</span></span></td><td>Chọn 1 series chủ lực để đẩy 9 ngày cuối.</td></tr>
+            <tr><td><span class="day">22</span></td><td>4</td><td>Scale series chủ lực</td><td><span class="pill-row"><span class="pill cyan">P mới</span><span class="pill peach">Highlight</span></span></td><td>Thêm slot 00:15 chỉ cho clip có drama mạnh, không đăng cho đủ số.</td></tr>
+            <tr><td><span class="day">23</span></td><td>4</td><td>Đẩy phần nối tiếp</td><td><span class="pill-row"><span class="pill peach">P tiếp</span><span class="pill sun">Kết mở</span></span></td><td>Ghim bình luận dẫn playlist trong 10 phút đầu sau đăng.</td></tr>
+            <tr><td><span class="day">24</span></td><td>4</td><td>Clip cao trào nhất</td><td><span class="pill-row"><span class="pill mint">Plot twist</span><span class="pill cyan">Đối đầu</span></span></td><td>Ưu tiên slot 19:30 cho clip mạnh nhất ngày.</td></tr>
+            <tr><td><span class="day">25</span></td><td>4</td><td>Clip dễ lưu</td><td><span class="pill-row"><span class="pill sun">Tên phim</span><span class="pill mint">Lịch phần sau</span></span></td><td>Caption rõ tên series và lịch ra phần tiếp theo.</td></tr>
+            <tr><td><span class="day">26</span></td><td>4</td><td>Test cover mới</td><td><span class="pill-row"><span class="pill cyan">Chữ lớn</span><span class="pill peach">Mặt cận</span></span></td><td>Chỉ đổi cover, giữ nội dung tương đương để đo tác động CTR.</td></tr>
+            <tr><td><span class="day">27</span></td><td>4</td><td>Retarget người xem cũ</td><td><span class="pill-row"><span class="pill mint">P tiếp</span><span class="pill cyan">Tóm tắt ngắn</span></span></td><td>Đặt comment dẫn link playlist, theo dõi completion của series.</td></tr>
+            <tr><td><span class="day">28</span></td><td>4</td><td>Cuối tuần dễ cày</td><td><span class="pill-row"><span class="pill sun">Marathon</span><span class="pill peach">Playlist</span></span></td><td>Chuẩn bị 10 clip evergreen cho tháng sau.</td></tr>
+            <tr><td><span class="day">29</span></td><td>4</td><td>Kéo cộng đồng</td><td><span class="pill-row"><span class="pill cyan">Vote phần</span><span class="pill mint">Chọn series</span></span></td><td>Tổng hợp câu hỏi để mở series mới.</td></tr>
+            <tr><td><span class="day">30</span></td><td>4</td><td>Audit và kế hoạch tháng 2</td><td><span class="pill-row"><span class="pill sun">Best 10</span><span class="pill peach">Roadmap</span></span></td><td>Chốt 3 series thắng, lịch tháng 2, tiêu chuẩn giữ/bỏ nguồn và format.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="workflow" class="section" aria-labelledby="workflow-title">
+      <div class="section-head">
+        <div>
+          <h2 id="workflow-title">Workflow sản xuất hằng ngày</h2>
+          <p>Thiết kế để chạy được một mình: batch nguồn, chia phần, chuẩn hóa cover/caption, đăng và đọc số liệu cùng ngày.</p>
+        </div>
+        <span class="tag">Vận hành</span>
+      </div>
+
+      <div class="grid two">
+        <div class="mini-card">
+          <h3>Buổi sáng: đăng và chuẩn bị</h3>
+          <ul>
+            <li>07:00 kiểm tra clip đã export, âm thanh, caption, tên phần và nguồn tư liệu.</li>
+            <li>07:30 đăng slot đầu, phản hồi bình luận trong 15 phút đầu.</li>
+            <li>09:00 chọn 3-5 đoạn tiếp theo từ backlog và comment người xem.</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <h3>Buổi chiều/tối: dựng và audit</h3>
+          <ul>
+            <li>14:00 chia phần cho 6-8 clip, đặt tên P1/P2/P3 và điểm dừng.</li>
+            <li>18:00 dựng batch theo template 9:16, kiểm tra chữ, âm lượng và cover.</li>
+            <li>23:00 đọc số liệu, gắn nhãn clip thắng/thua trong tracker.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid three" style="margin-top: 12px;">
+        <article class="mini-card accent-cyan">
+          <h3>Template clip</h3>
+          <p>9:16, chữ lớn, 2 dòng tối đa, vùng chữ tránh sát notch và thanh home indicator iPhone.</p>
+        </article>
+        <article class="mini-card accent-mint">
+          <h3>Template caption</h3>
+          <p>Tên series + số phần + câu tò mò. Hashtag 3-5 cái, không spam hashtag rộng.</p>
+        </article>
+        <article class="mini-card accent-peach">
+          <h3>Template tracker</h3>
+          <p>Ghi ngày, nguồn, series, số phần, độ dài, view 2h/24h, retention, completion, comment, follow gained.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="source-title">
+      <div class="section-head">
+        <div>
+          <h2 id="source-title">Quy tắc nguồn và QA</h2>
+          <p>Phần này giúp kênh tăng trưởng bền hơn: nguồn rõ, file sạch, trải nghiệm xem tốt và ít lỗi vận hành.</p>
+        </div>
+        <span class="tag">An toàn</span>
+      </div>
+
+      <div class="checklist">
+        <label class="check"><input type="checkbox"><span>Lưu link nguồn, tên phim, số tập, trạng thái quyền sử dụng và ghi chú xử lý vào tracker trước khi đăng.</span></label>
+        <label class="check"><input type="checkbox"><span>Không dùng kỹ thuật nhằm qua mặt hệ thống bản quyền hoặc chính sách nền tảng; chỉ đăng nội dung bạn có quyền khai thác.</span></label>
+        <label class="check"><input type="checkbox"><span>Kiểm tra file trước đăng: 1080x1920, âm lượng ổn định, không lệch sync, không vỡ chữ, không che mặt nhân vật.</span></label>
+        <label class="check"><input type="checkbox"><span>Mỗi clip cần có tên series, số phần và điểm dừng rõ để người xem biết nên xem tiếp ở đâu.</span></label>
+        <label class="check"><input type="checkbox"><span>Nếu clip bị mute, hạn chế phân phối hoặc cảnh báo chính sách, dừng nguồn/format đó và kiểm tra lại quyền sử dụng.</span></label>
+      </div>
+    </section>
+
+    <section id="kpi" class="section" aria-labelledby="kpi-title">
+      <div class="section-head">
+        <div>
+          <h2 id="kpi-title">KPI và cách tối ưu</h2>
+          <p>Không tối ưu theo view đơn lẻ. Tối ưu theo retention, follow gained, bình luận và số video thắng lặp lại được.</p>
+        </div>
+        <span class="tag">Đo lường</span>
+      </div>
+
+      <div class="grid four">
+        <article class="mini-card">
+          <h3>3 giây đầu</h3>
+          <p>Mục tiêu tuần 1: trên 65%. Nếu thấp, hook đang dài hoặc chưa rõ drama.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Completion</h3>
+          <p>Clip 60-180s nên đạt trên 25-35%. Nếu thấp, cắt bối cảnh, vào xung đột sớm hơn.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Follow gained</h3>
+          <p>Clip nối phần phải kéo follow tốt hơn clip rời. Dùng CTA phần tiếp và playlist.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Comment rate</h3>
+          <p>Chủ đề tranh luận nên tạo comment. Nếu ít comment, đổi CTA từ “theo dõi” sang câu hỏi lựa chọn.</p>
+        </article>
+      </div>
+
+      <div class="table-wrap" style="margin-top: 12px;" role="region" aria-label="Bảng audit tuần" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th>Mốc</th>
+              <th>Cần giữ</th>
+              <th>Cần bỏ</th>
+              <th>Quyết định</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Cuối ngày 7</td><td>2 series có retention cao nhất</td><td>Clip dưới 500 view sau 24h và retention thấp</td><td>Nhân đôi series thắng trong tuần 2</td></tr>
+            <tr><td>Cuối ngày 14</td><td>Series có follow gained tốt</td><td>Clip nhiều view nhưng không kéo xem tiếp</td><td>Chọn 3 phim/series chủ lực</td></tr>
+            <tr><td>Cuối ngày 21</td><td>Hook tạo tranh luận</td><td>Slot giờ không kéo view</td><td>Đẩy 1 series chủ lực 9 ngày cuối</td></tr>
+            <tr><td>Cuối ngày 30</td><td>3 series thắng rõ</td><td>Nguồn có cảnh báo chính sách hoặc quyền sử dụng không rõ</td><td>Lập lịch tháng 2 với 90-120 clip</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Điều hướng nhanh trên mobile">
+    <a href="#strategy">Chiến lược</a>
+    <a href="#calendar">Lịch</a>
+    <a href="#workflow">Làm</a>
+    <a href="#kpi">KPI</a>
+  </nav>
+</body>
+</html>
